@@ -1,0 +1,30 @@
+<section class="orders">
+    <header>List Orders by ID</header>
+    <div class="controls">
+        <label>
+            <span>Min</span>
+            <input type="number" data-ng-model="orders.min" min="0">
+        </label>
+        <label>
+            <span>Max</span>
+            <input type="number" data-ng-model="orders.max" min="0">
+        </label>
+    </div>
+     <ol class="content">
+        <li class="header">
+            <span class="order-id">Order Id</span>
+            <span class="event-id">Event Id</span>
+            <span class="user-login">User Login</span>
+            <span class="tickets">Tickets</span>
+        </li>
+        <li data-ng-repeat="order in orders.orders track by order.id">
+            <span class="order-id">{{order.id}}</span>
+            <span class="event-id">{{order.show.id}}</span>
+            <span class="user-login">{{order.buyer.login}}</span>
+            <span class="tickets">{{order.tickets |  number}}</span>
+        </li>
+    </ol>
+    <div class="pagination-container">
+        <ul data-uib-pagination data-ng-show="orders.paging.total > orders.paging.itemsPerPage.get()" data-items-per-page="orders.paging.itemsPerPage.get()" data-total-items="orders.paging.total" data-ng-model="orders.paging.currentPage" data-max-size="orders.paging.numberOfPagesToShow" boundary-links="true" data-ng-change="orders.paging.pageChanged()" data-previous-text="&lsaquo;" data-next-text="&rsaquo;" data-first-text="&laquo;" data-last-text="&raquo;"></ul>
+    </div>
+</section>

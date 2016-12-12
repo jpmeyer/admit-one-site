@@ -1,0 +1,44 @@
+.orders {
+  header {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .controls {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+
+  .content {
+    margin: 20px 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      list-style: none;
+      > * {
+        flex: 1 0 1%;
+      }
+      &:nth-child(even) {
+        background-color: #ddd;
+      }
+    }
+
+    .header {
+      font-weight: bold;
+    }
+  }
+
+  .pagination-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
